@@ -1,21 +1,24 @@
-
-syms x
-
-
-equation = (x - 6) + x + 3*x == 89;
+A = [8 5 6; -12 -9 12; -3 -3 5];
 
 
-solution = solve(equation, x);
+eigenvalues = eig(A);
 
 
-x_value = double(solution);
-amount_A = x_value - 6;
-amount_B = 3 * x_value;
+[eigenvectors, ~] = eig(A);
 
-fprintf('Student A has Php %.2f\n', amount_A);
-fprintf('Student B has Php %.2f\n', amount_B);
-fprintf('Student C has Php %.2f\n', x_value);
 
-Student A has Php 13.00
-Student B has Php 57.00
-Student C has Php 19.00
+disp('Eigenvalues:');
+disp(eigenvalues);
+
+disp('Eigenvectors:');
+disp(eigenvectors);
+
+Eigenvalues:
+   0.5000 + 5.8095i
+   0.5000 - 5.8095i
+   3.0000 + 0.0000i
+
+Eigenvectors:
+  -0.4269 - 0.3566i  -0.4269 + 0.3566i   0.7071 + 0.0000i
+   0.8036 + 0.0000i   0.8036 + 0.0000i  -0.7071 + 0.0000i
+   0.2093 + 0.0324i   0.2093 - 0.0324i   0.0000 + 0.0000i
